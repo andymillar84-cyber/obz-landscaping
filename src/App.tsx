@@ -233,7 +233,7 @@ const AboutSection = () => {
       </div>
       <div className="w-full md:w-1/2 relative min-h-[600px] grayscale-[0.2] brightness-100 overflow-hidden">
         <img
-          src="https://storage.googleapis.com/aistudio-user-uploads-production/ce24520c-985c-4695-bb58-78ad96d8c3d5/input_file_0.png"
+          src="/zach.jpg"
           alt="Chris and Erin - OBZ Landscaping"
           className="absolute inset-0 w-full h-full object-cover"
           referrerPolicy="no-referrer"
@@ -394,7 +394,7 @@ export default function App() {
         {/* Background Video with Overlay */}
         <div className="absolute inset-0 z-0">
           <video
-            src="https://storage.googleapis.com/aistudio-user-uploads-production/ce24520c-985c-4695-bb58-78ad96d8c3d5/video_0.mp4"
+            src="/hero.mp4"
             autoPlay
             loop
             muted
