@@ -205,17 +205,22 @@ const CaseStudies = () => {
           >
             {projects.map((project) => (
               <div key={project.id} className="w-full">
-                <div className="aspect-[9/16] overflow-hidden rounded-sm mb-4 grayscale-[0.3] hover:grayscale-0 transition-all duration-1000 relative">
-                  <img
-                    src={project.image}
-                    alt={project.location}
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-8 pointer-events-none">
-                    <p className="text-xl font-bold tracking-[0.2em] text-white uppercase drop-shadow-md">
+                <div className="relative flex items-center pr-12 lg:pr-24">
+                  {/* Text sits center-left, occupying its own space before the image */}
+                  <div className="absolute left-0 z-10 w-48 md:w-64">
+                    <h3 className="text-xl md:text-3xl font-light tracking-tight text-white drop-shadow-lg leading-tight">
                       {project.location}
-                    </p>
+                    </h3>
+                  </div>
+
+                  {/* Image container pushed right to give text room */}
+                  <div className="aspect-[9/16] w-full ml-16 md:ml-32 overflow-hidden rounded-sm mb-4 grayscale-[0.3] hover:grayscale-0 transition-all duration-1000">
+                    <img
+                      src={project.image}
+                      alt={project.location}
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                 </div>
               </div>
