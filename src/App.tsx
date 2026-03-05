@@ -7,6 +7,12 @@ import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight, Star, X, ArrowRight } from "lucide-react";
 
+import drumcondraImg from "./Drumcondra.jpg";
+import leopoldImg from "./Leopold.png";
+import pointLonsdaleImg from "./Point Lonsdale.jpg";
+import portarlingtonImg from "./Portarlington.jpg";
+import torquayImg from "./Torquay.jpg";
+
 // --- Types ---
 
 interface NavLink {
@@ -130,21 +136,28 @@ const CaseStudies = () => {
   const projects = [
     {
       id: 1,
-      title: "NAALA BADU – SYDNEY MODERN",
-      location: "CITY OF SYDNEY, AUSTRALIA",
-      image: "https://picsum.photos/seed/paving1/1200/800",
+      location: "Drumcondra, Vic",
+      image: drumcondraImg,
     },
     {
       id: 2,
-      title: "PARRAMATTA AQUATIC AND LEISURE",
-      location: "SYDNEY, AUSTRALIA",
-      image: "https://picsum.photos/seed/paving2/1200/800",
+      location: "Leopold, Vic",
+      image: leopoldImg,
     },
     {
       id: 3,
-      title: "TORQUAY COASTAL RESIDENCE",
-      location: "TORQUAY, VICTORIA",
-      image: "https://picsum.photos/seed/paving3/1200/800",
+      location: "Point Lonsdale, Vic",
+      image: pointLonsdaleImg,
+    },
+    {
+      id: 4,
+      location: "Portarlington, Vic",
+      image: portarlingtonImg,
+    },
+    {
+      id: 5,
+      location: "Torquay, Vic",
+      image: torquayImg,
     },
   ];
 
@@ -195,15 +208,12 @@ const CaseStudies = () => {
                 <div className="aspect-[21/9] overflow-hidden rounded-sm mb-8 grayscale-[0.3] hover:grayscale-0 transition-all duration-1000">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={project.location}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
                 </div>
                 <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
-                  <h3 className="text-xl font-light tracking-tight text-brand-cream">
-                    {project.title}
-                  </h3>
                   <p className="text-[10px] font-bold tracking-[0.2em] text-brand-sage uppercase">
                     {project.location}
                   </p>
