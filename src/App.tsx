@@ -351,83 +351,24 @@ const ContactPopup = ({
               <X className="w-5 h-5" />
             </button>
 
-            <div className="p-12 md:p-16">
-              <h2 className="text-4xl font-light tracking-tight mb-4 text-brand-cream">
-                Get a Quote
-              </h2>
-              <p className="text-brand-sage mb-12 font-light">
-                Tell us about your project and we'll get back to you shortly.
-              </p>
-
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="name"
-                      className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40"
-                    >
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      type="text"
-                      required
-                      className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="phone"
-                      className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40"
-                    >
-                      Phone
-                    </label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all"
-                      placeholder="0400 000 000"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label
-                    htmlFor="email"
-                    className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label
-                    htmlFor="message"
-                    className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={3}
-                    required
-                    className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all resize-none"
-                    placeholder="Tell us about your vision..."
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full py-5 bg-brand-green text-brand-cream font-bold tracking-[0.2em] uppercase text-xs hover:bg-brand-green/80 transition-all flex items-center justify-center gap-3 mt-8"
-                >
-                  Send Inquiry <ArrowRight className="w-4 h-4" />
-                </button>
-              </form>
+            <div className="w-full h-[85vh] max-h-[782px] overflow-hidden">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/46H1xxoSn4aHrHzX0mC1"
+                style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "3px" }}
+                id="popup-46H1xxoSn4aHrHzX0mC1"
+                data-layout="{'id':'POPUP'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Enquiry Form"
+                data-height="782"
+                data-layout-iframe-id="popup-46H1xxoSn4aHrHzX0mC1"
+                data-form-id="46H1xxoSn4aHrHzX0mC1"
+                title="Enquiry Form"
+              ></iframe>
             </div>
           </motion.div>
         </div>
