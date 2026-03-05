@@ -205,18 +205,18 @@ const CaseStudies = () => {
           >
             {projects.map((project) => (
               <div key={project.id} className="w-full">
-                <div className="aspect-[9/16] overflow-hidden rounded-sm mb-4 grayscale-[0.3] hover:grayscale-0 transition-all duration-1000">
+                <div className="aspect-[9/16] overflow-hidden rounded-sm mb-4 grayscale-[0.3] hover:grayscale-0 transition-all duration-1000 relative">
                   <img
                     src={project.image}
                     alt={project.location}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
-                </div>
-                <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
-                  <p className="text-[10px] font-bold tracking-[0.2em] text-brand-sage uppercase">
-                    {project.location}
-                  </p>
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-8 pointer-events-none">
+                    <p className="text-xl font-bold tracking-[0.2em] text-white uppercase drop-shadow-md">
+                      {project.location}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
