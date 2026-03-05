@@ -173,7 +173,7 @@ const CaseStudies = () => {
 
   return (
     <section id="work" className="py-24 px-6 md:px-12 bg-bg-dark">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-lg mx-auto">
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-[10px] font-bold tracking-[0.4em] uppercase text-brand-cream/60">
             Featured Projects
