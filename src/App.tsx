@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight, Star, X, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
+import { ChevronLeft, ChevronRight, Star, X, ArrowRight } from "lucide-react";
 
 // --- Types ---
 
@@ -17,11 +17,11 @@ interface NavLink {
 // --- Data ---
 
 const NAV_LINKS: NavLink[] = [
-  { label: 'Home', href: '#' },
-  { label: 'Services', href: '#services' },
-  { label: 'Our Work', href: '#work' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: "Home", href: "#" },
+  { label: "Services", href: "#services" },
+  { label: "Our Work", href: "#work" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 // --- Components ---
@@ -36,17 +36,17 @@ const ParticleDrift = () => {
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
-            opacity: Math.random() * 0.5 + 0.2
+            opacity: Math.random() * 0.5 + 0.2,
           }}
           animate={{
             y: [null, "-20%"],
             x: [null, (Math.random() - 0.5) * 10 + "%"],
-            opacity: [null, 0]
+            opacity: [null, 0],
           }}
           transition={{
             duration: Math.random() * 10 + 10,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         />
       ))}
@@ -77,29 +77,31 @@ const ServicesSection = () => {
   const services = [
     {
       title: "Crazy Paving",
-      description: "Bespoke crazy paving installations using natural and reconstituted stone for paths, patios, and feature areas."
+      description:
+        "Bespoke crazy paving installations using natural and reconstituted stone for paths, patios, and feature areas.",
     },
     {
       title: "Pool Paving",
-      description: "Non-slip, beautiful pool surrounds that complement your outdoor living space and withstand the elements."
+      description:
+        "Non-slip, beautiful pool surrounds that complement your outdoor living space and withstand the elements.",
     },
     {
       title: "Landscape Design",
-      description: "Full garden design and construction, from concept to completion, tailored to your lifestyle and block."
+      description:
+        "Full garden design and construction, from concept to completion, tailored to your lifestyle and block.",
     },
-    {
-      title: "Garden Maintenance",
-      description: "Ongoing care and maintenance to keep your outdoor space looking its best year-round."
-    }
   ];
 
   return (
-    <section id="services" className="py-24 px-6 md:px-12 bg-surface-dark border-b border-white/5">
+    <section
+      id="services"
+      className="py-24 px-6 md:px-12 bg-surface-dark border-b border-white/5"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-[10px] font-bold tracking-[0.4em] uppercase text-brand-cream/60 mb-16">
           Services
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {services.map((service, i) => (
             <motion.div
               key={i}
@@ -110,8 +112,12 @@ const ServicesSection = () => {
               className="flex flex-col"
             >
               <div className="w-8 h-[1px] bg-brand-green mb-8" />
-              <h3 className="text-xl font-light text-brand-cream mb-4 tracking-tight">{service.title}</h3>
-              <p className="text-brand-sage font-light leading-relaxed text-sm flex-grow">{service.description}</p>
+              <h3 className="text-xl font-light text-brand-cream mb-4 tracking-tight">
+                {service.title}
+              </h3>
+              <p className="text-brand-sage font-light leading-relaxed text-sm flex-grow">
+                {service.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -126,20 +132,20 @@ const CaseStudies = () => {
       id: 1,
       title: "NAALA BADU – SYDNEY MODERN",
       location: "CITY OF SYDNEY, AUSTRALIA",
-      image: "https://picsum.photos/seed/paving1/1200/800"
+      image: "https://picsum.photos/seed/paving1/1200/800",
     },
     {
       id: 2,
       title: "PARRAMATTA AQUATIC AND LEISURE",
       location: "SYDNEY, AUSTRALIA",
-      image: "https://picsum.photos/seed/paving2/1200/800"
+      image: "https://picsum.photos/seed/paving2/1200/800",
     },
     {
       id: 3,
       title: "TORQUAY COASTAL RESIDENCE",
       location: "TORQUAY, VICTORIA",
-      image: "https://picsum.photos/seed/paving3/1200/800"
-    }
+      image: "https://picsum.photos/seed/paving3/1200/800",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -195,8 +201,12 @@ const CaseStudies = () => {
                   />
                 </div>
                 <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
-                  <h3 className="text-xl font-light tracking-tight text-brand-cream">{project.title}</h3>
-                  <p className="text-[10px] font-bold tracking-[0.2em] text-brand-sage uppercase">{project.location}</p>
+                  <h3 className="text-xl font-light tracking-tight text-brand-cream">
+                    {project.title}
+                  </h3>
+                  <p className="text-[10px] font-bold tracking-[0.2em] text-brand-sage uppercase">
+                    {project.location}
+                  </p>
                 </div>
               </div>
             ))}
@@ -209,7 +219,10 @@ const CaseStudies = () => {
 
 const AboutSection = () => {
   return (
-    <section id="about" className="flex flex-col md:flex-row min-h-screen bg-bg-dark">
+    <section
+      id="about"
+      className="flex flex-col md:flex-row min-h-screen bg-bg-dark"
+    >
       <div className="w-full md:w-1/2 bg-surface-dark p-12 md:p-24 flex flex-col justify-center border-r border-white/5">
         <h2 className="text-[10px] font-bold tracking-[0.4em] uppercase text-brand-cream/60 mb-12">
           About Me
@@ -220,14 +233,16 @@ const AboutSection = () => {
           </p>
           <div className="space-y-8 text-brand-sage leading-relaxed font-light text-lg">
             <p>
-              Originally from Eltham, I made a sea change to Torquay before eventually settling here in Teesdale. It's been the perfect spot to grow both our family and our landscaping business.
+              Originally from Eltham, I made a sea change to Torquay before
+              eventually settling here in Teesdale. It's been the perfect spot
+              to grow both our family and our landscaping business.
             </p>
             <p>
-              Gardening isn't just my job—it's my passion. I love getting my hands dirty, creating outdoor spaces that people love, and turning visions into reality.
+              Gardening isn't just my job—it's my passion. I love getting my
+              hands dirty, creating outdoor spaces that people love, and turning
+              visions into reality.
             </p>
-            <p className="pt-8 text-brand-cream font-medium">
-              Chris, Director
-            </p>
+            <p className="pt-8 text-brand-cream font-medium">Chris, Director</p>
           </div>
         </div>
       </div>
@@ -247,20 +262,20 @@ const ReviewsSection = () => {
   const reviews = [
     {
       name: "JAYDEN MCHENRY",
-      text: "Chris and his team did an outstanding job for me. He completely relandscaped my front and back gardens, which was a huge job and I couldn't be happier."
+      text: "Chris and his team did an outstanding job for me. He completely relandscaped my front and back gardens, which was a huge job and I couldn't be happier.",
     },
     {
       name: "LAURA ACKLAND",
-      text: "We're thrilled with our new backyard that Chris and co helped us revamp on a budget! They were prompt, efficient and pros at their job."
+      text: "We're thrilled with our new backyard that Chris and co helped us revamp on a budget! They were prompt, efficient and pros at their job.",
     },
     {
       name: "JESSE OEY",
-      text: "Chris and his team did such a wonderful job completely transforming our new house's neglected backyard into a warm, welcoming green oasis."
+      text: "Chris and his team did such a wonderful job completely transforming our new house's neglected backyard into a warm, welcoming green oasis.",
     },
     {
       name: "JASMIN HEPBURN",
-      text: "After years of having a vision in my head, Chris and the team at OBZ Landscaping made it a reality! They were professional and easy to work with."
-    }
+      text: "After years of having a vision in my head, Chris and the team at OBZ Landscaping made it a reality! They were professional and easy to work with.",
+    },
   ];
 
   return (
@@ -274,7 +289,10 @@ const ReviewsSection = () => {
             <div key={i} className="flex flex-col">
               <div className="flex gap-1 mb-8">
                 {[...Array(5)].map((_, j) => (
-                  <Star key={j} className="w-3 h-3 fill-brand-green text-brand-green" />
+                  <Star
+                    key={j}
+                    className="w-3 h-3 fill-brand-green text-brand-green"
+                  />
                 ))}
               </div>
               <p className="text-base text-brand-sage leading-relaxed mb-8 flex-grow font-light italic">
@@ -291,7 +309,13 @@ const ReviewsSection = () => {
   );
 };
 
-const ContactPopup = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
+const ContactPopup = ({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -318,29 +342,79 @@ const ContactPopup = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
             </button>
 
             <div className="p-12 md:p-16">
-              <h2 className="text-4xl font-light tracking-tight mb-4 text-brand-cream">Get a Quote</h2>
-              <p className="text-brand-sage mb-12 font-light">Tell us about your project and we'll get back to you shortly.</p>
+              <h2 className="text-4xl font-light tracking-tight mb-4 text-brand-cream">
+                Get a Quote
+              </h2>
+              <p className="text-brand-sage mb-12 font-light">
+                Tell us about your project and we'll get back to you shortly.
+              </p>
 
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40">Name</label>
-                    <input id="name" type="text" required className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all" placeholder="John Doe" />
+                    <label
+                      htmlFor="name"
+                      className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40"
+                    >
+                      Name
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      required
+                      className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all"
+                      placeholder="John Doe"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40">Phone</label>
-                    <input id="phone" type="tel" className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all" placeholder="0400 000 000" />
+                    <label
+                      htmlFor="phone"
+                      className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40"
+                    >
+                      Phone
+                    </label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all"
+                      placeholder="0400 000 000"
+                    />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40">Email</label>
-                  <input id="email" type="email" required className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all" placeholder="john@example.com" />
+                  <label
+                    htmlFor="email"
+                    className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40"
+                  >
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all"
+                    placeholder="john@example.com"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40">Message</label>
-                  <textarea id="message" rows={3} required className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all resize-none" placeholder="Tell us about your vision..."></textarea>
+                  <label
+                    htmlFor="message"
+                    className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-cream/40"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={3}
+                    required
+                    className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-brand-cream focus:outline-none focus:border-brand-green transition-all resize-none"
+                    placeholder="Tell us about your vision..."
+                  ></textarea>
                 </div>
-                <button type="submit" className="w-full py-5 bg-brand-green text-brand-cream font-bold tracking-[0.2em] uppercase text-xs hover:bg-brand-green/80 transition-all flex items-center justify-center gap-3 mt-8">
+                <button
+                  type="submit"
+                  className="w-full py-5 bg-brand-green text-brand-cream font-bold tracking-[0.2em] uppercase text-xs hover:bg-brand-green/80 transition-all flex items-center justify-center gap-3 mt-8"
+                >
                   Send Inquiry <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
@@ -358,14 +432,16 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div className="relative font-sans bg-bg-dark selection:bg-brand-green selection:text-white">
       {/* --- Navigation --- */}
-      <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-700 ${scrolled ? 'py-4' : 'py-10'}`}>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-700 ${scrolled ? "py-4" : "py-10"}`}
+      >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex items-center justify-between transition-all duration-700">
             <a href="#" className="flex items-center gap-4">
@@ -505,7 +581,13 @@ export default function App() {
 
         {/* Sparkle Icon */}
         <div className="absolute bottom-12 right-12 text-brand-cream/10">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
             <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
           </svg>
         </div>
@@ -521,8 +603,20 @@ export default function App() {
           </a>
 
           <div className="flex gap-12 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-sage">
-            <a href="#" aria-label="OBZ Landscaping on Instagram" className="hover:text-brand-green transition-colors">Instagram</a>
-            <a href="#" aria-label="OBZ Landscaping on Facebook" className="hover:text-brand-green transition-colors">Facebook</a>
+            <a
+              href="#"
+              aria-label="OBZ Landscaping on Instagram"
+              className="hover:text-brand-green transition-colors"
+            >
+              Instagram
+            </a>
+            <a
+              href="#"
+              aria-label="OBZ Landscaping on Facebook"
+              className="hover:text-brand-green transition-colors"
+            >
+              Facebook
+            </a>
           </div>
 
           <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-cream/20">
@@ -532,7 +626,10 @@ export default function App() {
       </footer>
 
       {/* --- Popup Form --- */}
-      <ContactPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      <ContactPopup
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+      />
     </div>
   );
 }
