@@ -198,13 +198,13 @@ const CaseStudies = () => {
 
         <div className="relative overflow-hidden">
           <motion.div
-            className="flex gap-6"
+            className="flex"
             animate={{ x: `-${currentIndex * (100 / projects.length)}%` }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             style={{ width: `${projects.length * 100}%` }}
           >
             {projects.map((project) => (
-              <div key={project.id} className="w-full flex flex-row items-center gap-6">
+              <div key={project.id} className="flex flex-row items-center gap-8" style={{ width: `${100 / projects.length}%` }}>
                 {/* Text — left column, completely outside the image */}
                 <div className="w-1/3 flex flex-col items-end text-right shrink-0">
                   <h3 className="text-xl md:text-2xl font-light tracking-tight text-brand-cream leading-tight">
