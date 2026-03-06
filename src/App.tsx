@@ -197,39 +197,40 @@ const CaseStudies = () => {
         </div>
 
         <div className="relative overflow-hidden">
-          <motion.div
-            className="flex"
-            animate={{ x: `-${currentIndex * (100 / projects.length)}%` }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            style={{ width: `${projects.length * 100}%` }}
-          >
-            {projects.map((project) => (
-              <div key={project.id} className="flex flex-row items-center gap-8" style={{ width: `${100 / projects.length}%` }}>
-                {/* Text — left column, completely outside the image */}
-                <div className="w-1/3 flex flex-col items-end text-right shrink-0">
-                  <h3 className="text-xl md:text-2xl font-light tracking-tight text-brand-cream leading-tight">
-                    {project.location.split(',')[0]}
-                  </h3>
-                  {project.location.includes(',') && (
-                    <p className="text-[10px] font-bold tracking-[0.2em] text-brand-sage uppercase mt-2">
-                      {project.location.split(',')[1].trim()}
-                    </p>
-                  )}
-                </div>
-
-                {/* Image — right column */}
-                <div className="w-2/3 aspect-[4/5] overflow-hidden rounded-sm grayscale-[0.3] hover:grayscale-0 transition-all duration-1000 shrink-0">
-                  <img
-                    src={project.image}
-                    alt={project.location}
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="flex flex-row items-center gap-8"
+            >
+              {/* Text — left column, completely outside the image */}
+              <div className="w-1/3 flex flex-col items-end text-right shrink-0">
+                <h3 className="text-xl md:text-2xl font-light tracking-tight text-brand-cream leading-tight">
+                  {projects[currentIndex].location.split(',')[0]}
+                </h3>
+                {projects[currentIndex].location.includes(',') && (
+                  <p className="text-[10px] font-bold tracking-[0.2em] text-brand-sage uppercase mt-2">
+                    {projects[currentIndex].location.split(',')[1].trim()}
+                  </p>
+                )}
               </div>
-            ))}
-          </motion.div>
+
+              {/* Image — right column */}
+              <div className="w-2/3 aspect-[4/5] overflow-hidden rounded-sm grayscale-[0.3] hover:grayscale-0 transition-all duration-1000 shrink-0">
+                <img
+                  src={projects[currentIndex].image}
+                  alt={projects[currentIndex].location}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
+
       </div>
     </section>
   );
