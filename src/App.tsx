@@ -204,24 +204,27 @@ const CaseStudies = () => {
             style={{ width: `${projects.length * 100}%` }}
           >
             {projects.map((project) => (
-              <div key={project.id} className="w-full">
-                <div className="relative flex items-center pr-12 lg:pr-24">
-                  {/* Text sits center-left, occupying its own space before the image */}
-                  <div className="absolute left-0 z-10 w-48 md:w-64">
-                    <h3 className="text-xl md:text-3xl font-light tracking-tight text-white drop-shadow-lg leading-tight">
-                      {project.location}
-                    </h3>
-                  </div>
+              <div key={project.id} className="w-full flex flex-row items-center gap-6">
+                {/* Text — left column, completely outside the image */}
+                <div className="w-1/3 flex flex-col items-end text-right shrink-0">
+                  <h3 className="text-xl md:text-2xl font-light tracking-tight text-brand-cream leading-tight">
+                    {project.location.split(',')[0]}
+                  </h3>
+                  {project.location.includes(',') && (
+                    <p className="text-[10px] font-bold tracking-[0.2em] text-brand-sage uppercase mt-2">
+                      {project.location.split(',')[1].trim()}
+                    </p>
+                  )}
+                </div>
 
-                  {/* Image container pushed right to give text room */}
-                  <div className="aspect-[9/16] w-full ml-16 md:ml-32 overflow-hidden rounded-sm mb-4 grayscale-[0.3] hover:grayscale-0 transition-all duration-1000">
-                    <img
-                      src={project.image}
-                      alt={project.location}
-                      className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
+                {/* Image — right column */}
+                <div className="w-2/3 aspect-[4/5] overflow-hidden rounded-sm grayscale-[0.3] hover:grayscale-0 transition-all duration-1000 shrink-0">
+                  <img
+                    src={project.image}
+                    alt={project.location}
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
               </div>
             ))}
